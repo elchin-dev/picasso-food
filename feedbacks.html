@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Главная</title>
+  <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+  <div class="header__body">
+    <!-- Логотип -->
+    <div class="logo header-box">
+      <a href="#" class="logo-a">
+        <img src="images/icons/logo.svg" alt="" />
+      </a>
+    </div>
+    <!-- Адресс -->
+    <div class="adress header-box">
+      <div class="adress-placeholder header-placeholder">
+        <img src="images/icons/placeholder.svg" alt="" />
+        <p>Адрес доставки</p>
+      </div>
+    </div>
+    <!-- Адресс виджет -->
+    <div class="adress__widget widget">
+      <div class="adress__widget-header widget-header">
+        <div class="form-control">
+          <img class="icon" src="images/icons/placeholder.svg" alt="" />
+          <input class="adress-input" id="adress-widget-input" type="text" placeholder="Укажите Адресс доставки">
+          <div class="close-adress-widget btn"><img src="images/icons/cancel.svg" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <!-- Поиск -->
+    <div class="search header-box">
+      <div class="search-placeholder header-placeholder">
+        <img src="images/icons/loupe.svg" alt="" />
+        <p>Поиск</p>
+      </div>
+
+    </div>
+    <!-- Поиск виджет -->
+    <div class="search__widget widget">
+      <div class="search__widget-header widget-header">
+        <div class="form-control">
+          <img class="icon" src="images/icons/loupe.svg" alt="">
+          <input class="search-input" id="search-widget-input" type="text" placeholder="Ресторан, блюдо или товар">
+          <div class="close-search-widget btn"><img src="images/icons/cancel.svg" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <!-- Войти -->
+    <div class="sign-in header-box">
+      <div class="sign-in-placeholder header-placeholder">
+        <img src="images/icons/user.svg" alt="" />
+        <p>Войти</p>
+      </div>
+    </div>
+    <!-- Корзина -->
+    <a href="#" class="basket header-box active">
+      <div class="basket-placeholder header-placeholder">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="symbol-sprite.svg_basket"><path fill="none" d="M0 0h24v24H0z"></path><path d="M7 10V7.002A3.004 3.004 0 0110 4h4c1.657 0 3 1.339 3 3.002V10h3v3.236l-1.056 2.113L17.78 20H6.219l-1.163-4.651L4 13.236V10h3zm9.22 8l.81-3.243.076-.204.894-1.79V12H6v.764l.894 1.789.076.204L7.78 18h8.44zM15 10V7.002A.998.998 0 0014 6h-4c-.549 0-1 .45-1 1.002V10h6z"></path></svg>
+        <p>Корзина</p>
+      </div>
+    </a>
+  </div>
+</header>
+<header class="header-mobile">
+    <div class="header-mobile-body">
+      <div class="adress-mob header-mobile-box">
+        <input type="text" placeholder="Куда доставить еду?">
+      </div>
+      <div class="adress-mobile-widget widget">
+        <div class="adress-mobile-widget-header widget-header">
+          <div class="form-control">
+            <img src="images/icons/placeholder.svg" alt="">
+            <input class="adress-mob-input" id="adress-widget-input-mob" type="text" placeholder="Укажите Адресс доставки">
+            <div class="close-adress-widget-mob btn"><img src="images/icons/cancel.svg" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="search-mob header-mobile-box">
+        <img src="images/icons/loupe.svg" alt="">
+      </div>
+      <div class="search-mobile-widget widget">
+        <div class="search-mobile-widget-header">
+          <div class="form-control">
+            <img src="images/icons/loupe.svg" alt="">
+            <input class="search-mob-input" id="search-widget-input" type="text" placeholder="Укажите Адресс доставки">
+            <div class="close-search-widget-mob btn"><img src="images/icons/cancel.svg" alt=""></div>
+          </div>
+        </div>
+        <div class="search-mobile-widget-body">
+          <ul>
+            <li>
+              <a href="#">
+                <div class="image">
+                  <img src="images/KFC_msk.jpg" alt="">
+                </div>
+                KFC
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="image">
+                  <img src="images/KFC_msk.jpg" alt="">
+                </div>
+                KFC
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="image">
+                  <img src="images/KFC_msk.jpg" alt="">
+                </div>
+                KFC
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sign-mob header-mobile-box">
+        <img src="images/icons/user.svg" alt="">
+      </div>
+    </div>
+</header>
+<!-- Черный Фон для виджетов -->
+<div class="overlay-widgets overlay"></div>
+<div class="overlay-widgets2 overlay"></div>
+
+<!-- Войти -->
+
+<div class="popup-fade sign-popup-fade overlay">
+  <div class="popup popup-sign">
+    <h3>Войтдите в аккаунт</h3>
+    <form class="form-succes">
+      <div class="form-group">
+        <label for="sign-input">Телефона</label>
+        <input placeholder="+7 (___) ___-__-__" id="sign-input" type="text">
+        <small>Не удалось отправить код</small>
+      </div>
+      <p>Указывая номер телефона, вы принимаете условия <br>
+        <a href="#">пользовательского соглашения</a></p>
+    </form>
+    <form class="form-fail">
+      <p class="code-text">Код из СМС</p>
+      <input type="text">
+      <p>Код отправлен на номер <span>+ 7 (994) 545-45-45</span></p>
+      <p>Отправить ещё через <span>32</span> сек.</p>
+      <a href="Отправить повторно">Отправить повторно</a>
+    </form>
+    <div class="popup-close sign-popup-close"><img src="images/icons/cancel.svg" alt="" /></div>
+  </div>
+</div>
+  <section class="restaurant feedbacks">
+    <div class="main">
+      <div class="main-header">
+        <a href="#" class="back"><img src="images/icons/left-arrow.svg" alt="">Все рестораны</a>
+        <div class="main-header-info">
+          <div class="main-header-info-text">
+            <h1>Отзывы о KFC</h1>
+          </div>
+          <div class="main-header-info-logo">
+            <img src="images/KFC_msk.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="main-content feedbacks-main row">
+        <div class="col-lg-8 ">
+          <div class="rating">
+            <div class="left gold">
+              <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+                </svg>
+              4.7
+            </div>
+            <p>Рейтинг складывается из оценок клиентов, скорости доставки и еще множества разных параметров</p>
+          </div>
+          <div class="feedback-box">
+            <div class="feedback">  
+              <div class="left">
+                <p>😊</p>
+              </div>
+              <div class="right">
+                <h4>Отличный курьер.</h4>
+                <p>БАСКЕТ M (20 куриных крылышек), Ай-Твистер</p>
+                <div class="div">
+                  <p class="author">Евгений</p>
+                  <div class="date">15 июня 2021, 20:20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-box">
+            <div class="feedback">  
+              <div class="left">
+                <p>😊</p>
+              </div>
+              <div class="right">
+                <h4>Отличный курьер.</h4>
+                <p>БАСКЕТ M (20 куриных крылышек), Ай-Твистер</p>
+                <div class="div">
+                  <p class="author">Евгений</p>
+                  <div class="date">15 июня 2021, 20:20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-box">
+            <div class="feedback">  
+              <div class="left">
+                <p>😊</p>
+              </div>
+              <div class="right">
+                <h4>Отличный курьер.</h4>
+                <p>БАСКЕТ M (20 куриных крылышек), Ай-Твистер</p>
+                <div class="div">
+                  <p class="author">Евгений</p>
+                  <div class="date">15 июня 2021, 20:20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-box">
+            <div class="feedback">  
+              <div class="left">
+                <p>😊</p>
+              </div>
+              <div class="right">
+                <h4>Отличный курьер.</h4>
+                <p>БАСКЕТ M (20 куриных крылышек), Ай-Твистер</p>
+                <div class="div">
+                  <p class="author">Евгений</p>
+                  <div class="date">15 июня 2021, 20:20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-box">
+            <div class="feedback">  
+              <div class="left">
+                <p>😊</p>
+              </div>
+              <div class="right">
+                <h4>Отличный курьер.</h4>
+                <p>БАСКЕТ M (20 куриных крылышек), Ай-Твистер</p>
+                <div class="div">
+                  <p class="author">Евгений</p>
+                  <div class="date">15 июня 2021, 20:20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-box">
+            <div class="feedback">  
+              <div class="left">
+                <p>😊</p>
+              </div>
+              <div class="right">
+                <h4>Отличный курьер.</h4>
+                <p>БАСКЕТ M (20 куриных крылышек), Ай-Твистер</p>
+                <div class="div">
+                  <p class="author">Евгений</p>
+                  <div class="date">15 июня 2021, 20:20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-box">
+            <div class="feedback">  
+              <div class="left">
+                <p>😊</p>
+              </div>
+              <div class="right">
+                <h4>Отличный курьер.</h4>
+                <p>БАСКЕТ M (20 куриных крылышек), Ай-Твистер</p>
+                <div class="div">
+                  <p class="author">Евгений</p>
+                  <div class="date">15 июня 2021, 20:20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-box">
+            <div class="feedback">  
+              <div class="left">
+                <p>😊</p>
+              </div>
+              <div class="right">
+                <h4>Отличный курьер.</h4>
+                <p>БАСКЕТ M (20 куриных крылышек), Ай-Твистер</p>
+                <div class="div">
+                  <p class="author">Евгений</p>
+                  <div class="date">15 июня 2021, 20:20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="view-all-feedbacks">
+            Показать ещё
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="basket empty-order">
+      <div class="basket-header">
+        <div class="text">
+          <p>Ваш заказ в ресторане</p>
+          <h4>KFC</h4>
+        </div>
+        <div class="image">
+          <img src="images/KFC_msk.jpg" alt="">
+        </div>
+      </div>
+      <div class="basket-body ">
+        <div class="basket-body-item order">
+          <div class="item-left order-info">
+            <h4>BASКЕТ L (28 куриных крылышек)</h4>
+            <ul>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+            </ul>
+          </div>
+          <div class="item-center order-quantity">
+            <button>-</button>
+            <p>1</p>
+            <button>+</button>
+          </div>
+          <div class="item-right order-price">
+            1314 ₽
+          </div>
+        </div>
+        <div class="basket-body-item order">
+          <div class="item-left order-info">
+            <h4>BASКЕТ L (28 куриных крылышек)</h4>
+            <ul>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+            </ul>
+          </div>
+          <div class="item-center order-quantity">
+            <button>-</button>
+            <p>1</p>
+            <button>+</button>
+          </div>
+          <div class="item-right order-price">
+            1314 ₽
+          </div>
+        </div>
+        <div class="basket-body-item order">
+          <div class="item-left order-info">
+            <h4>BASКЕТ L (28 куриных крылышек)</h4>
+            <ul>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+            </ul>
+          </div>
+          <div class="item-center order-quantity">
+            <button>-</button>
+            <p>1</p>
+            <button>+</button>
+          </div>
+          <div class="item-right order-price">
+            1314 ₽
+          </div>
+        </div>
+        <div class="basket-body-item order">
+          <div class="item-left order-info">
+            <h4>BASКЕТ L (28 куриных крылышек)</h4>
+            <ul>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+              <li>
+                <p>кетчуп томатный</p>
+              </li>
+            </ul>
+          </div>
+          <div class="item-center order-quantity">
+            <button>-</button>
+            <p>1</p>
+            <button>+</button>
+          </div>
+          <div class="item-right order-price">
+            1314 ₽
+          </div>
+        </div>
+        <div class="basket-body-item appliances">
+          <div class="appliances-text item-left">
+            столовые приборы
+          </div>
+          <div class="appliances-quantity item-center">
+            <button>-</button>
+            <p>1</p>
+            <button>+</button>
+          </div>
+          <div class="item-right"></div>
+        </div>
+        <div class="basket-body-item delivery">
+          <p class="text item-left">
+            Доставка
+          </p>
+          <div class="info item-center">
+            <img src="" alt="">
+          </div>
+          <p class='item-right delivery-price'>Бесплатно</p>
+        </div>
+        <div class="basket-body-item service">
+          <p class="text item-left">
+            Сервисный сбор
+          </p>
+          <div class="info item-center">
+            <img src="" alt="">
+          </div>
+          <p class="price item-right">9 ₽</p>
+        </div>
+        <div class="basket-body-item buy-container ">
+          <button class="buy">
+            <p>Заказат</p>
+            <p class="price">
+              1323 ₽
+            </p>
+          </button>
+        </div>
+        <div class="basket-body-item error">
+          <p>Закажите еще на 391 ₽ <br>для бесплатной доставки</p>
+        </div>
+        <!-- Пустая корзина -->
+        <div class="empty">
+          <img src="images/icons/zero.svg" alt="">
+          <p>В корзине пока пусто</p>
+        </div>
+      </div>
+      <div class="close-basket">
+        <img src="images/icons/cancel.svg" alt="">
+      </div>
+      <div class="popup-title">Корзина</div>
+      <!-- Кнопка корзина -->
+      <div class="open-basket">
+        <button>
+          <p>Заказат</p>
+          <p class="price">
+            1323 ₽
+          </p>
+        </button>
+
+      </div>
+    </div>
+
+  </section>
+  <!-- Модальное окно Ресторана -->
+  <div class="popup-fade restaurant-popup">
+    <div class="popup popup-restaurant row">
+      <div class="image col-lg-6">
+        <img src="images/category.webp" alt="">
+      </div>
+      <div class="restaurant-content col-lg-6">
+        <h1>Картофель фри стандартный</h1>
+        <p>Еще больше вкуса! В наших крупных ломтиках мы сохранили еще больше вкуса твоего любимого картофеля фри. Он
+          получается именно таким, как ты любишь – с аппетитно хрустящей корочкой.</p>
+        <h5>Ингредиенты</h5>
+        <ul>
+          <div class="popup-filter-content-check-container">
+            <div class="check">
+              <input id='kux' type="checkbox" name="">
+              <label for="kux"><img src="images/icons/check.svg" alt=""></label>
+            </div>
+            <div class="block">
+              <label for="kux">Основа киноа</label>
+              <label for="kux">+ 40 ₽</label>
+            </div>
+
+          </div>
+          <div class="popup-filter-content-check-container">
+            <div class="radio">
+              <input id='kux2' type="radio" name="">
+              <label for="kux2"></label>
+            </div>
+            <div class="block">
+              <label for="kux2">Основа киноа</label>
+              <label for="kux2">+ 40 ₽</label>
+            </div>
+
+          </div>
+        </ul>
+        <div class="bottom">
+          <div class="item-center order-quantity">
+            <button>-</button>
+            <p>1</p>
+            <button>+</button>
+          </div>
+          <button class="add-basket">
+            <p>Добавить</p>
+            <p>649 ₽</p>
+          </button>
+        </div>
+      </div>
+      <div class="popup-close restaurant-popup-close"><img src="images/icons/cancel.svg" alt="" /></div>
+
+    </div>
+  </div>
+
+
+
+  <div class="tag-overlay">
+
+  </div>
+  <footer class="footer restaurant-footer">
+    <div class="container">
+      <div class="footer-body">
+        <div class="footer-left">
+          <a href="#"><img src="images/icons/logo.svg" alt="" /></a>
+          <ul>
+            <li><a href="">Для ресторанов</a></li>
+            <li><a href="">Курьерам</a></li>
+            <li><a href="">Пресс-центр</a></li>
+            <li><a href="">Условия акций </a></li>
+            <li><a href="">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <div class="socials">
+            <p>Присоединяйтесь к нам</p>
+            <ul>
+              <li>
+                <a href="#"><img src="images/icons/vk.svg" alt="" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="images/icons/facebook.svg" alt="" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="images/icons/instagram.svg" alt="" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="images/icons/telegram.svg" alt="" /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="download">
+            <p>Заказывайте с телефона</p>
+            <ul>
+              <li><a href="#"><img src="images/icons/play-market.svg" alt="" /></a></li>
+              <li><a href="#"><img src="images/icons/app-store.svg" alt="" /></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer class="footer-2 restaurant-footer">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-4">
+          <p> 2009–2021, ООО «Деливери Клаб», официальный сайт
+          </p>
+        </div>
+        <div class="col-lg-8 d-flex justify-content-end">
+          <ul>
+            <li><a href="#">Правила</a></li>
+            <li><a href="#">Условия</a></li>
+            <li><a href="#">Пользовательское соглашение</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
+  <script src="js/mask.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
